@@ -9,11 +9,15 @@ namespace Dashboard.Hosts.Api.Controllers;
 /// Контроллер для работы с объявлениями.
 /// </summary>
 [ApiController]
-[Route("{post}")]
+[Route("post")]
 public class PostController : ControllerBase
 {
     private readonly IPostService _postService;
 
+    /// <summary>
+    /// Инициализует экземпляр <see cref="PostController"/>
+    /// </summary>
+    /// <param name="postService">Сервис работы с объявлениями.</param>
     public PostController(IPostService postService)
     {
         _postService = postService;
@@ -35,7 +39,8 @@ public class PostController : ControllerBase
     [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
     public async Task<IActionResult> GetByIdAsync(Guid id, CancellationToken cancellationToken)
     {
-        return Ok();
+        var result = _postService.GetByIdAsync(id, cancellationToken);
+        return Ok(result);
     }
 
     /// <summary>

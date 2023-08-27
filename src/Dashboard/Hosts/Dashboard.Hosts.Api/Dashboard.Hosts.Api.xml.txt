@@ -9,6 +9,12 @@
             Контроллер для работы с объявлениями.
             </summary>
         </member>
+        <member name="M:Dashboard.Hosts.Api.Controllers.PostController.#ctor(Dashboard.Application.AppServices.Contexts.Post.Services.IPostService)">
+            <summary>
+            Инициализует экземпляр <see cref="T:Dashboard.Hosts.Api.Controllers.PostController"/>
+            </summary>
+            <param name="postService">Сервис работы с объявлениями.</param>
+        </member>
         <member name="M:Dashboard.Hosts.Api.Controllers.PostController.GetByIdAsync(System.Guid,System.Threading.CancellationToken)">
             <summary>
             Возвращает объявления по идентификатору.
