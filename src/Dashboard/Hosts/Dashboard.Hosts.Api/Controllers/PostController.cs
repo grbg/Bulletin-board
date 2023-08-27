@@ -1,3 +1,4 @@
+using Dashboard.Application.AppServices.Contexts.Post.Services;
 using Dashboard.Dashboard.Contracts.Posts;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -11,6 +12,13 @@ namespace Dashboard.Hosts.Api.Controllers;
 [Route("{post}")]
 public class PostController : ControllerBase
 {
+    private readonly IPostService _postService;
+
+    public PostController(IPostService postService)
+    {
+        _postService = postService;
+    }
+
     /// <summary>
     /// Возвращает объявления по идентификатору.
     /// </summary>
@@ -33,6 +41,8 @@ public class PostController : ControllerBase
     /// <summary>
     /// Возвращает  постраничные объявления.
     /// </summary>
+    /// Пример:
+    /// curl: -XGET http://host:port/post/get-all-paged
     /// <param name="cancellationToken">Отмена операции.</param>
     /// <param name="pageSize">Размер страницы.</param>
     /// <param name="pageIndex">Номер страницы.</param>

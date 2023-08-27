@@ -13,6 +13,10 @@
             <summary>
             Возвращает объявления по идентификатору.
             </summary>
+            <remarks>
+            Пример: 
+            curl: -XGET http://host:port/post/get-by-id
+            </remarks>
             <param name="id">Идентификатор объявления.</param>
             <param name="cancellationToken">Отмена операции.</param>
             <returns>Модель объявления <see cref="T:Dashboard.Dashboard.Contracts.Posts.PostDto"/></returns>
@@ -21,6 +25,8 @@
             <summary>
             Возвращает  постраничные объявления.
             </summary>
+            Пример:
+            curl: -XGET http://host:port/post/get-all-paged
             <param name="cancellationToken">Отмена операции.</param>
             <param name="pageSize">Размер страницы.</param>
             <param name="pageIndex">Номер страницы.</param>

@@ -1,4 +1,5 @@
-﻿using Dashboard.Dashboard.Contracts.Base;
+﻿using Dashboard.Contracts.Attachment;
+using Dashboard.Dashboard.Contracts.Base;
 using System;
 
 namespace Dashboard.Dashboard.Contracts.Posts;
@@ -31,11 +32,15 @@ public class PostDto : BaseDto
     /// <summary>
     /// Наименование тегов.
     /// </summary>
-    public string TagName { get; set; }
+    public string[] TagNames { get; set; }
 
     /// <summary>
     /// Цена.
     /// </summary>
     public decimal Price { get; set; }
 
+    /// <summary>
+    /// Изображения.
+    /// </summary>
+    public IReadOnlyCollection<AttachmentDto> Attachments { get; set; }
 }

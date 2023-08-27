@@ -9,6 +9,11 @@
             Базовый контракт.
             </summary>
         </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Base.BaseDto.PostId">
+            <summary>
+            Уникальный идентификатор объявления.
+            </summary>
+        </member>
         <member name="T:Dashboard.Dashboard.Contracts.Posts.PostDto">
             <summary>
              Объявление.
@@ -34,14 +39,19 @@
             Создатель объявления.
             </summary>
         </member>
-        <member name="P:Dashboard.Dashboard.Contracts.Posts.PostDto.TagName">
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.PostDto.TagNames">
             <summary>
-            наименование тегов.
+            Наименование тегов.
             </summary>
         </member>
         <member name="P:Dashboard.Dashboard.Contracts.Posts.PostDto.Price">
             <summary>
             Цена.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.PostDto.Attachments">
+            <summary>
+            Изображения.
             </summary>
         </member>
     </members>

@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Dashboard.Application\Dashboard.AppServices\Dashboard.AppServices.csproj" />
     <ProjectReference Include="..\..\Dashboard.Contracts\Dashboard.Contracts.csproj" />
   </ItemGroup>
 
