@@ -29,7 +29,7 @@ public class PostDto : BaseDto
     public string Author { get; set; }
 
     /// <summary>
-    /// наименование тегов.
+    /// Наименование тегов.
     /// </summary>
     public string TagName { get; set; }
 

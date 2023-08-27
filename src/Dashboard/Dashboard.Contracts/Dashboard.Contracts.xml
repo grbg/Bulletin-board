@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dashboard.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:Dashboard.Dashboard.Contracts.Base.BaseDto">
+            <summary>
+            Базовый контракт.
+            </summary>
+        </member>
+        <member name="T:Dashboard.Dashboard.Contracts.Posts.PostDto">
+            <summary>
+             Объявление.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.PostDto.Title">
+            <summary>
+            Заголовок.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.PostDto.Description">
+            <summary>
+            Описание.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.PostDto.CategoryName">
+            <summary>
+            Наименование категории.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.PostDto.Author">
+            <summary>
+            Создатель объявления.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.PostDto.TagName">
+            <summary>
+            наименование тегов.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.PostDto.Price">
+            <summary>
+            Цена.
+            </summary>
+        </member>
+    </members>
+</doc>

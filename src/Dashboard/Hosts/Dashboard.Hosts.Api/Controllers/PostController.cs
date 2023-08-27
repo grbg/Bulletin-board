@@ -1,20 +1,30 @@
 using Dashboard.Dashboard.Contracts.Posts;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace Dashboard.Hosts.Api.Controllers;
 
 /// <summary>
 /// Контроллер для работы с объявлениями.
 /// </summary>
+[ApiController]
+[Route("{post}")]
 public class PostController : ControllerBase
 {
     /// <summary>
     /// Возвращает объявления по идентификатору.
     /// </summary>
+    /// <remarks>
+    /// Пример: 
+    /// curl: -XGET http://host:port/post/get-by-id
+    /// </remarks>
     /// <param name="id">Идентификатор объявления.</param>
     /// <param name="cancellationToken">Отмена операции.</param>
     /// <returns>Модель объявления <see cref="PostDto"/></returns>
     [HttpGet("get-by-id")]
+    [ProducesResponseType(typeof(PostDto),(int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.NotFound)]
+    [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
     public async Task<IActionResult> GetByIdAsync(Guid id, CancellationToken cancellationToken)
     {
         return Ok();

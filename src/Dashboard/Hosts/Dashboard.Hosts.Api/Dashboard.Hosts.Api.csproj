@@ -7,11 +7,23 @@
     <UserSecretsId>502f56cf-11e8-4c2e-8f3a-f05b9e4bd99b</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>C:\Bulletin board\src\Dashboard\Hosts\Dashboard.Hosts.Api\Dashboard.Hosts.Api.xml.txt</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Optimize>False</Optimize>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Dashboard.Hosts.Api.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Dashboard.Hosts.Api.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
