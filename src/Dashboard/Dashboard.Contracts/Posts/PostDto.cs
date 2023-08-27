@@ -1,39 +1,40 @@
-using Dashboard.Contracts.Base;
+п»їusing Dashboard.Dashboard.Contracts.Base;
+using System;
 
-namespace Dashboard.Contracts.Posts;
+namespace Dashboard.Dashboard.Contracts.Posts;
 
 /// <summary>
-///  Объявление.
+///  РћР±СЉСЏРІР»РµРЅРёРµ.
 /// </summary>
 public class PostDto : BaseDto
 {
     /// <summary>
-    /// Заголовок.
+    /// Р—Р°РіРѕР»РѕРІРѕРє.
     /// </summary>
     public string Title { get; set; }
 
     /// <summary>
-    /// Описание.
+    /// РћРїРёСЃР°РЅРёРµ.
     /// </summary>
     public string Description { get; set; }
 
     /// <summary>
-    /// Наименование категории.
+    /// РќР°РёРјРµРЅРѕРІР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё.
     /// </summary>
     public string CategoryName { get; set; }
-    
+
     /// <summary>
-    /// Создатель объявления.
+    /// РЎРѕР·РґР°С‚РµР»СЊ РѕР±СЉСЏРІР»РµРЅРёСЏ.
     /// </summary>
     public string Author { get; set; }
 
     /// <summary>
-    /// наименование тегов.
+    /// РЅР°РёРјРµРЅРѕРІР°РЅРёРµ С‚РµРіРѕРІ.
     /// </summary>
     public string TagName { get; set; }
 
     /// <summary>
-    /// Цена.
+    /// Р¦РµРЅР°.
     /// </summary>
     public decimal Price { get; set; }
 

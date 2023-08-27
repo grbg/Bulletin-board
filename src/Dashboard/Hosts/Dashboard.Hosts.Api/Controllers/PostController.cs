@@ -1,11 +1,12 @@
-using Mircosoft.AspNetCore.Mvc;
+using Dashboard.Dashboard.Contracts.Posts;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Dashboard.Hosts.Api.Controllers;
 
 /// <summary>
 /// Контроллер для работы с объявлениями.
 /// </summary>
-public class PostController : ControllersBase
+public class PostController : ControllerBase
 {
     /// <summary>
     /// Возвращает объявления по идентификатору.
@@ -13,7 +14,7 @@ public class PostController : ControllersBase
     /// <param name="id">Идентификатор объявления.</param>
     /// <param name="cancellationToken">Отмена операции.</param>
     /// <returns>Модель объявления <see cref="PostDto"/></returns>
-    [HtttpGet("get-by-id")]
+    [HttpGet("get-by-id")]
     public async Task<IActionResult> GetByIdAsync(Guid id, CancellationToken cancellationToken)
     {
         return Ok();
@@ -26,7 +27,7 @@ public class PostController : ControllersBase
     /// <param name="pageSize">Размер страницы.</param>
     /// <param name="pageIndex">Номер страницы.</param>
     /// <returns>Коллекция объявлений <see cref="PostDto"/></returns>
-    [HtttpGet("get-all-paged")]
+    [HttpGet("get-all-paged")]
     public async Task<IActionResult> GetAllAsync(CancellationToken cancellationToken, int pageSize = 10, int pageIndex = 0)
     {
         return Ok();
@@ -37,7 +38,7 @@ public class PostController : ControllersBase
     /// </summary>
     /// <param name="cancellationToken">Отмена операции.</param>
     /// <returns></returns>
-    [HtttpPost]
+    [HttpPost]
     public async Task<IActionResult> CreateAsync(PostDto dto, CancellationToken cancellationToken)
     {
         return Created(string.Empty, null);

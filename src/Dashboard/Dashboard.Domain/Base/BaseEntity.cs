@@ -1,9 +1,9 @@
-namespace Dashboard.Domain.Base;
+п»їnamespace Dashboard.DashboardDomain.Base;
 
 using System;
 
 /// <summary>
-///  Базовая сущность.
+///  Р‘Р°Р·РѕРІР°СЏ СЃСѓС‰РЅРѕСЃС‚СЊ.
 /// </summary>
 public class BaseEntity
 {

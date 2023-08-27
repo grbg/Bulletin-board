@@ -1,39 +1,39 @@
-using Dashboard.Domain.Base;
+п»їusing Dashboard.DashboardDomain.Base;
 
-namespace Dashboard.Domain.Posts;
+namespace Dashboard.DashboardDomain.Posts;
 
 /// <summary>
-///  Сущность объявлений.
+///  РЎСѓС‰РЅРѕСЃС‚СЊ РѕР±СЉСЏРІР»РµРЅРёР№.
 /// </summary>
 public class Post : BaseEntity
 {
     /// <summary>
-    /// Заголовок.
+    /// Р—Р°РіРѕР»РѕРІРѕРє.
     /// </summary>
     public string Title { get; set; }
 
     /// <summary>
-    /// Описание.
+    /// РћРїРёСЃР°РЅРёРµ.
     /// </summary>
     public string Description { get; set; }
 
     /// <summary>
-    /// Наименование категории.
+    /// РќР°РёРјРµРЅРѕРІР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё.
     /// </summary>
     public Guid CategoryId { get; set; }
 
     /// <summary>
-    /// Создатель объявления.
+    /// РЎРѕР·РґР°С‚РµР»СЊ РѕР±СЉСЏРІР»РµРЅРёСЏ.
     /// </summary>
     public string Author { get; set; }
 
     /// <summary>
-    /// наименование тегов.
+    /// РЅР°РёРјРµРЅРѕРІР°РЅРёРµ С‚РµРіРѕРІ.
     /// </summary>
     public string TagName { get; set; }
 
     /// <summary>
-    /// Цена.
+    /// Р¦РµРЅР°.
     /// </summary>
     public decimal Price { get; set; }
 
