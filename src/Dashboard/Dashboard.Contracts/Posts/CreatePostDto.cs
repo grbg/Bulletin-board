@@ -1,11 +1,13 @@
-﻿using Dashboard.DashboardDomain.Base;
+﻿using Dashboard.Contracts.Attachment;
+using Dashboard.Dashboard.Contracts.Base;
+using System;
 
-namespace Dashboard.DashboardDomain.Posts;
+namespace Dashboard.Dashboard.Contracts.Posts;
 
 /// <summary>
-///  Сущность объявлений.
+///  Объявление.
 /// </summary>
-public class Post : BaseEntity
+public class CreatePostDto
 {
     /// <summary>
     /// Заголовок.
@@ -18,7 +20,7 @@ public class Post : BaseEntity
     public string Description { get; set; }
 
     /// <summary>
-    /// Наименование категории.
+    /// Идентификатор категории.
     /// </summary>
     public Guid CategoryId { get; set; }
 
@@ -28,7 +30,7 @@ public class Post : BaseEntity
     public string Author { get; set; }
 
     /// <summary>
-    /// наименование тегов.
+    /// Наименование тегов.
     /// </summary>
     public string[] TagNames { get; set; }
 
@@ -36,5 +38,4 @@ public class Post : BaseEntity
     /// Цена.
     /// </summary>
     public decimal Price { get; set; }
-
 }

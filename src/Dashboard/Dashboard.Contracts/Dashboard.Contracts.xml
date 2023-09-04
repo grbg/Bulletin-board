@@ -14,6 +14,41 @@
             Уникальный идентификатор объявления.
             </summary>
         </member>
+        <member name="T:Dashboard.Dashboard.Contracts.Posts.CreatePostDto">
+            <summary>
+             Объявление.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.CreatePostDto.Title">
+            <summary>
+            Заголовок.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.CreatePostDto.Description">
+            <summary>
+            Описание.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.CreatePostDto.CategoryId">
+            <summary>
+            Идентификатор категории.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.CreatePostDto.Author">
+            <summary>
+            Создатель объявления.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.CreatePostDto.TagNames">
+            <summary>
+            Наименование тегов.
+            </summary>
+        </member>
+        <member name="P:Dashboard.Dashboard.Contracts.Posts.CreatePostDto.Price">
+            <summary>
+            Цена.
+            </summary>
+        </member>
         <member name="T:Dashboard.Dashboard.Contracts.Posts.PostDto">
             <summary>
              Объявление.

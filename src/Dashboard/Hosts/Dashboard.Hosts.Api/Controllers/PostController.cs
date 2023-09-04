@@ -59,14 +59,16 @@ public class PostController : ControllerBase
     }
 
     /// <summary>
-    /// Создает объявление.
+    /// Создаёт объявление.
     /// </summary>
+    /// <param name="dto">Модель для создания объявления.</param>
     /// <param name="cancellationToken">Отмена операции.</param>
-    /// <returns></returns>
+    /// <returns>Идентификатор созданной сущности.</returns>
     [HttpPost]
-    public async Task<IActionResult> CreateAsync(PostDto dto, CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateAsync(CreatePostDto dto, CancellationToken cancellationToken)
     {
-        return Created(string.Empty, null);
+        var modelId = await _postService.CreateAsync(dto, cancellationToken);
+        return Created(nameof(CreateAsync) ,modelId);
     }
 
     /// <summary>

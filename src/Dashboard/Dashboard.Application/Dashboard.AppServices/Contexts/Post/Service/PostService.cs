@@ -1,6 +1,8 @@
 ﻿using Dashboard.Application.AppServices.Contexts.Post.Repositories;
 using Dashboard.Contracts;
 using Dashboard.Dashboard.Contracts.Posts;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace Dashboard.Application.AppServices.Contexts.Post.Services;
 
@@ -22,5 +24,19 @@ public class PostService : IPostService
     public Task<PostDto> GetByIdAsync(Guid id, CancellationToken cancellationToken)
     {
         return _postRepository.GetByIdAsync(id, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public Task<Guid> CreateAsync(CreatePostDto model, CancellationToken cancellationToken)
+    {
+            var post = new DashboardDomain.Posts.Post();
+            {
+                post.Description = model.Description;
+                post.Title = model.Title;
+                post.CategoryId = model.CategoryId;
+                post.Author = model.Author;
+                post.TagNames = model.TagNames;
+            };
+            return _postRepository.CreateAsync(post, cancellationToken);
     }
 }
