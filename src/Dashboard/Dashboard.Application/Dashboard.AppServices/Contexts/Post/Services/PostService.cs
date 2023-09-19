@@ -39,4 +39,19 @@ public class PostService : IPostService
             };
             return _postRepository.CreateAsync(post, cancellationToken);
     }
+
+    public Task<PostDto> GetAllAsync(CancellationToken cancellationToken, int pageSize = 10, int pageIndex = 0)
+    {
+        return _postRepository.
+    }
+
+    public Task UpdateAsync(Guid id, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Guid> DeleteAsync(Guid id, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
 }

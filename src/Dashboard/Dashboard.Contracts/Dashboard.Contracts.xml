@@ -4,6 +4,26 @@
         <name>Dashboard.Contracts</name>
     </assembly>
     <members>
+        <member name="T:Dashboard.Contracts.Attributes.TagsSizeAttribute">
+            <summary>
+            Валидирует размер массива тегов.
+            </summary>
+        </member>
+        <member name="M:Dashboard.Contracts.Attributes.TagsSizeAttribute.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Валидирует размер массива тегов.
+            </summary>
+            <param name="maxSize">Максимальная длина массива.</param>
+            <param name="minSize">Минимальная длина массива.</param>
+        </member>
+        <member name="M:Dashboard.Contracts.Attributes.TagsSizeAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Валидирует длину массива по максимальной и минимальной.
+            </summary>
+            <param name="value">Поле для валидации.</param>
+            <param name="validationContext">Контекст валидации.</param>
+            <returns>Результат валидации.</returns>
+        </member>
         <member name="T:Dashboard.Dashboard.Contracts.Base.BaseDto">
             <summary>
             Базовый контракт.
