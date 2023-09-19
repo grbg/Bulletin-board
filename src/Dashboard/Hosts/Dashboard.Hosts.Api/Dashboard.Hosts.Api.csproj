@@ -8,7 +8,7 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>C:\Bulletin board\src\Dashboard\Hosts\Dashboard.Hosts.Api\Dashboard.Hosts.Api.xml.txt</DocumentationFile>
+    <DocumentationFile>C:\Bulletin board\src\Dashboard\Hosts\Dashboard.Hosts.Api\Dashboard.Hosts.Api.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -16,24 +16,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Dashboard.Hosts.Api.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Dashboard.Hosts.Api.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Dashboard.Application\Dashboard.AppServices\Dashboard.AppServices.csproj" />
+    <ProjectReference Include="..\..\Dashboard.Clients\Dashboard.Clients.csproj" />
     <ProjectReference Include="..\..\Dashboard.Contracts\Dashboard.Contracts.csproj" />
+    <ProjectReference Include="..\..\Dashboard.Domain\Dashboard.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Dashboard.Infrastructure.DataAccess\Dashboard.Infrastructure.DataAccess.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Dashboard.Infrastructure\Dashboard.Infrastructure\Dashboard.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -21,13 +21,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard.Contracts", "..\.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dashboard.Infrastructure", "Dashboard.Infrastructure", "{F2F7D1E2-5058-4494-BA5E-C271B7A5B7BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.Infrastructure.DataAccess", "..\..\Infrastructure\Dashboard.Infrastructure.DataAccess\Dashboard.Infrastructure.DataAccess.csproj", "{407F8124-48AA-4C49-89C2-CE67E84DAECF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard.Infrastructure.DataAccess", "..\..\Infrastructure\Dashboard.Infrastructure.DataAccess\Dashboard.Infrastructure.DataAccess.csproj", "{407F8124-48AA-4C49-89C2-CE67E84DAECF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.Infrastructure", "..\..\Infrastructure\Dashboard.Infrastructure\Dashboard.Infrastructure\Dashboard.Infrastructure.csproj", "{3CAA5F73-D7FB-4B35-99B5-5E0477C871FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard.Infrastructure", "..\..\Infrastructure\Dashboard.Infrastructure\Dashboard.Infrastructure\Dashboard.Infrastructure.csproj", "{3CAA5F73-D7FB-4B35-99B5-5E0477C871FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.AppServices", "..\..\Dashboard.Application\Dashboard.AppServices\Dashboard.AppServices.csproj", "{8F553F41-8D36-4B82-BC8E-F908A6D2CABC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard.AppServices", "..\..\Dashboard.Application\Dashboard.AppServices\Dashboard.AppServices.csproj", "{8F553F41-8D36-4B82-BC8E-F908A6D2CABC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dashboard.Application", "Dashboard.Application", "{0135A8F8-9C96-4B74-9E77-59575B836D6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.Hosts.Migrations", "..\Dashboard.Hosts.Migrations\Dashboard.Hosts.Migrations.csproj", "{928EB148-7857-4DC7-8D8B-A73DAAB3FB39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dashboard.Hosts.Migration", "Dashboard.Hosts.Migration", "{2B74268A-3F40-4D18-8192-8238B8B1867A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,10 @@ Global
 		{8F553F41-8D36-4B82-BC8E-F908A6D2CABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F553F41-8D36-4B82-BC8E-F908A6D2CABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F553F41-8D36-4B82-BC8E-F908A6D2CABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{928EB148-7857-4DC7-8D8B-A73DAAB3FB39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{928EB148-7857-4DC7-8D8B-A73DAAB3FB39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{928EB148-7857-4DC7-8D8B-A73DAAB3FB39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{928EB148-7857-4DC7-8D8B-A73DAAB3FB39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +83,7 @@ Global
 		{407F8124-48AA-4C49-89C2-CE67E84DAECF} = {F2F7D1E2-5058-4494-BA5E-C271B7A5B7BD}
 		{3CAA5F73-D7FB-4B35-99B5-5E0477C871FA} = {F2F7D1E2-5058-4494-BA5E-C271B7A5B7BD}
 		{8F553F41-8D36-4B82-BC8E-F908A6D2CABC} = {0135A8F8-9C96-4B74-9E77-59575B836D6B}
+		{928EB148-7857-4DC7-8D8B-A73DAAB3FB39} = {2B74268A-3F40-4D18-8192-8238B8B1867A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C96CB5B-D7FA-4A86-9950-14BF84F00CBF}

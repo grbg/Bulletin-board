@@ -30,7 +30,7 @@ public class Post : BaseEntity
     /// <summary>
     /// наименование тегов.
     /// </summary>
-    public string TagName { get; set; }
+    public string[] TagNames { get; set; }
 
     /// <summary>
     /// Цена.

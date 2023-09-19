@@ -38,11 +38,12 @@
             <param name="pageIndex">Номер страницы.</param>
             <returns>Коллекция объявлений <see cref="T:Dashboard.Dashboard.Contracts.Posts.PostDto"/></returns>
         </member>
-        <member name="M:Dashboard.Hosts.Api.Controllers.PostController.CreateAsync(Dashboard.Dashboard.Contracts.Posts.PostDto,System.Threading.CancellationToken)">
+        <member name="M:Dashboard.Hosts.Api.Controllers.PostController.CreateAsync(Dashboard.Dashboard.Contracts.Posts.CreatePostDto,System.Threading.CancellationToken)">
             <summary>
-            Создает объявление.
+            Создаёт об.
             </summary>
-            <param name="cancellationToken">Отмена операции.</param>
+            <param name="dto"></param>
+            <param name="cancellationToken"></param>
             <returns></returns>
         </member>
         <member name="M:Dashboard.Hosts.Api.Controllers.PostController.UpdateAsync(Dashboard.Dashboard.Contracts.Posts.PostDto,System.Threading.CancellationToken)">

@@ -1,5 +1,7 @@
 using Dashboard.Application.AppServices.Contexts.Post.Services;
+using Dashboard.AppServices.Contexts.Post.Repositories;
 using Dashboard.Dashboard.Contracts.Posts;
+using Dashboard.DashboardDomain.Posts;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -34,12 +36,16 @@ public class PostController : ControllerBase
     /// <param name="cancellationToken">Отмена операции.</param>
     /// <returns>Модель объявления <see cref="PostDto"/></returns>
     [HttpGet("get-by-id")]
-    [ProducesResponseType(typeof(PostDto),(int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(PostDto), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-    public async Task<IActionResult> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+    public IActionResult GetById(Guid id, CancellationToken cancellationToken)
     {
         var result = _postService.GetByIdAsync(id, cancellationToken);
+        if (result == null)
+        {
+            return NotFound("Объявление не найдено");
+        }
         return Ok(result);
     }
 
@@ -53,20 +59,23 @@ public class PostController : ControllerBase
     /// <param name="pageIndex">Номер страницы.</param>
     /// <returns>Коллекция объявлений <see cref="PostDto"/></returns>
     [HttpGet("get-all-paged")]
-    public async Task<IActionResult> GetAllAsync(CancellationToken cancellationToken, int pageSize = 10, int pageIndex = 0)
+    public async Task<ActionResult<Post>> GetAllAsync(CancellationToken cancellationToken, int pageSize = 10, int pageIndex = 0)
     {
-        return Ok();
+        var post = await _postService.GetAllAsync(cancellationToken, pageSize, pageIndex);
+        return Ok(post);
     }
 
     /// <summary>
-    /// Создает объявление.
+    /// Создаёт объявление.
     /// </summary>
-    /// <param name="cancellationToken">Отмена операции.</param>
+    /// <param name="dto"></param>
+    /// <param name="cancellationToken"></param>
     /// <returns></returns>
     [HttpPost]
-    public async Task<IActionResult> CreateAsync(PostDto dto, CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateAsync(CreatePostDto dto, CancellationToken cancellationToken)
     {
-        return Created(string.Empty, null);
+        var modelId = await _postService.CreateAsync(dto, cancellationToken);
+        return Created(nameof(CreateAsync) ,modelId);
     }
 
     /// <summary>
@@ -75,9 +84,16 @@ public class PostController : ControllerBase
     /// <param name="cancellationToken">Отмена операции.</param>
     /// <returns></returns>
     [HttpPut]
-    public async Task<IActionResult> UpdateAsync(PostDto dto, CancellationToken cancellationToken)
+    public async Task<IActionResult> UpdateAsync(Guid id, PostDto dto, CancellationToken cancellationToken)
     {
-        return Ok();
+        var post = await _postService.GetByIdAsync(id,  cancellationToken);
+        if (post == null)
+        {
+            return NotFound();
+        }
+        await _postService.UpdateAsync(id, cancellationToken);
+
+        return NoContent();
     }
 
     /// <summary>
@@ -89,6 +105,11 @@ public class PostController : ControllerBase
     [HttpDelete]
     public async Task<IActionResult> DeleteAsync(Guid id, CancellationToken cancellationToken)
     {
-        return Ok();
+        var post = await _postService.DeleteAsync(id, cancellationToken);
+        if (post == null)
+        {
+            return NotFound();
+        }
+        return NoContent();
     }
 }

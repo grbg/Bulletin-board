@@ -1,5 +1,10 @@
 using Dashboard.Dashboard.Contracts.Posts;
 using Dashboard.Hosts.Api.Controllers;
+using Dashboard.Application.AppServices;
+using Dashboard.Infrastructure.DataAccess;
+using Dashboard.Application.AppServices.Contexts.Post.Services;
+using Dashboard.Application.AppServices.Contexts.Post.Repositories;
+using Dashboard.Infrastructure.DataAccess.Contexts.Post.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +32,8 @@ builder.Services.AddSwaggerGen(s =>
 }
 );
 
+builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddScoped<IPostRepository, PostRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
