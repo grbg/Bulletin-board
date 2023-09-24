@@ -15,7 +15,7 @@
             </summary>
             <param name="postService">Сервис работы с объявлениями.</param>
         </member>
-        <member name="M:Dashboard.Hosts.Api.Controllers.PostController.GetByIdAsync(System.Guid,System.Threading.CancellationToken)">
+        <member name="M:Dashboard.Hosts.Api.Controllers.PostController.GetById(System.Guid,System.Threading.CancellationToken)">
             <summary>
             Возвращает объявления по идентификатору.
             </summary>
@@ -40,13 +40,13 @@
         </member>
         <member name="M:Dashboard.Hosts.Api.Controllers.PostController.CreateAsync(Dashboard.Dashboard.Contracts.Posts.CreatePostDto,System.Threading.CancellationToken)">
             <summary>
-            Создаёт об.
+            Создаёт объявление.
             </summary>
             <param name="dto"></param>
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:Dashboard.Hosts.Api.Controllers.PostController.UpdateAsync(Dashboard.Dashboard.Contracts.Posts.PostDto,System.Threading.CancellationToken)">
+        <member name="M:Dashboard.Hosts.Api.Controllers.PostController.UpdateAsync(System.Guid,Dashboard.Dashboard.Contracts.Posts.PostDto,System.Threading.CancellationToken)">
             <summary>
             Редактирует объявление.
             </summary>

@@ -1,5 +1,4 @@
 ﻿using Dashboard.Application.AppServices.Contexts.Post.Repositories;
-using Dashboard.AppServices.Contexts.Post.Repositories;
 using Dashboard.Dashboard.Contracts.Posts;
 
 namespace Dashboard.Infrastructure.DataAccess.Contexts.Post.Repositories;
@@ -7,20 +6,28 @@ namespace Dashboard.Infrastructure.DataAccess.Contexts.Post.Repositories;
 /// <inheritdoc cref="IPostRepository"/>
 public class PostRepository : IPostRepository
 {
-    private readonly IRepository<DashboardDomain.Posts.Post> _repository;
-
-    public PostRepository(IRepository<DashboardDomain.Posts.Post> repository)
-    {
-        _repository = repository;
-    }
 
     public async Task<Guid> CreateAsync(DashboardDomain.Posts.Post model, CancellationToken cancellationToken)
     {
-        await _repository.AddAsync(model);
         return model.PostId;
     }
 
+    public Task<Guid> DeleteAsync(Guid id, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<PostDto> GetAllAsync(CancellationToken cancellationToken, int pageSize = 10, int pageIndex = 0)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task<PostDto> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateAsync(Guid id, DashboardDomain.Posts.Post model, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

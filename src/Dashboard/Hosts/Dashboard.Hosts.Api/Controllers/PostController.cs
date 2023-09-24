@@ -1,5 +1,4 @@
 using Dashboard.Application.AppServices.Contexts.Post.Services;
-using Dashboard.AppServices.Contexts.Post.Repositories;
 using Dashboard.Dashboard.Contracts.Posts;
 using Dashboard.DashboardDomain.Posts;
 using Microsoft.AspNetCore.Mvc;

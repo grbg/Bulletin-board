@@ -42,7 +42,7 @@ public class PostService : IPostService
 
     public Task<PostDto> GetAllAsync(CancellationToken cancellationToken, int pageSize = 10, int pageIndex = 0)
     {
-        return _postRepository.
+        throw new NotImplementedException();
     }
 
     public Task UpdateAsync(Guid id, CancellationToken cancellationToken)
